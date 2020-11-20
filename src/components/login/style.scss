@@ -1,0 +1,93 @@
+.base-container{
+    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header{
+        font-size: 18px;
+        font-family: "Open Sans", sans-serif;
+        color: coral;
+    }
+
+    .content {
+        
+        display: flex;
+        flex-direction: column;
+
+        .image {
+            width: 21em;
+            img {
+                width: 60%;
+                height: 60%;
+            }
+        }
+
+        .form {
+            margin-top: 2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: coral;
+        
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                width: fit-content;
+                
+                label {
+                    margin-bottom: 0px;
+                    font-size: 12px;
+                }
+                input {
+                    margin-top: 6px;
+                    min-width: 10em;
+                    height: 25px;
+                    padding: 0px 10px;
+                    font-size: 14px;
+                    font-family: "Open Sans", sans-serif;
+                    color: coral;
+                    background-color:#f3e0cb;
+                    border: 0;
+                    border-radius: 4px;
+                    margin-bottom: 0px;
+                    transition: all 250ms ease-in-out;
+                   /* &:hover{
+
+                    } */
+                    &:focus{
+                        outline: none;
+                        box-shadow: 0px 0px 12px 0.8px #0e81ce96;   
+                    }
+                }
+                
+            }
+
+        }
+        
+    }
+    .footer{
+        margin-top: 3em;
+    }
+}    
+            //Button
+
+        
+.btn {
+    font-size: 14px;
+    padding: 5px 20px;
+    border: 0;
+    background-color: coral;
+    color: #fff;
+    border-radius: 3px;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+    &:hover {
+      background-color: #f8dd64;
+    }
+    &:focus {
+      outline: none;
+    }
+  }

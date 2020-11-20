@@ -1,0 +1,8 @@
+[1013/145020.072:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
+[1013/152213.843:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\B R O C O L A N D\AppData\Local\Microsoft\Edge\User Data\Crashpad\attachments\d9eee9cf-f43f-44b3-9636-92d5e241cd5e: El sistema no puede encontrar la ruta especificada. (0x3)
+[1013/152408.206:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\B R O C O L A N D\AppData\Local\Microsoft\Edge\User Data\Crashpad\attachments\6b963d4b-5146-42b0-822a-bfeeba0c9b67: El sistema no puede encontrar la ruta especificada. (0x3)
+[1013/152408.206:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Se intentó obtener acceso a un proceso que está cerrándose. (0xc000010a)
+[1015/225006.170:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
+[1017/101502.895:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
+[1020/205838.990:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
+[1021/210928.209:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
