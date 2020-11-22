@@ -88,6 +88,7 @@ export default function Content() {
                           <h2>${elemento.precio}</h2>
                           <p> {elemento.Nombre}</p>
                           <a href="#" class="btn btn-default add-to-cart">
+                            {/* se agarra el id ------ da click se warda en la base de datos y en checkout solo se recupera lo guardado en el carrito*/}
                           <i class="fa fa-shopping-cart"></i>Añadir al carrito
                           </a>
                         </div>
