@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
 import logo from './login.svg';
-import FPass from './components/ForgetPassword'
+import FPass from '../ForgetPassword'
 import './App.css';
-import Login from './components/login/';
-import Register from './components/signup';
-import CartPrice from './components/Cart';
-import Home from './components/content';
-import NosotrosL from './components/nosotros';
-import Booking from './components/contacto';
-import Acerca from './components/acerca';
-import Congra from './components/congratulation'
-import { Nosotros } from './pages';
-import Cart from './components/CartPrice';
-import Checkout from './components/checkout';
-import PlaceOrder from './components/PlaceOrder';
-import UpUs from './components/updateuser'
-import HPay from './components/historialpay';
-import Header from './components/header';
+import Login from '../login';
+import Register from '../signup';
+import CartPrice from '../Cart';
+import Home from '../content';
+import NosotrosL from '../nosotros';
+import Booking from '../contacto';
+import Acerca from '../acerca';
+import Congra from '../congratulation'
+import { Nosotros } from '../../pages';
+import Cart from '../CartPrice';
+import PlaceOrder from '../PlaceOrder';
+import UpUs from '../updateuser'
+import HPay from '../historialpay';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import Check from './components/checkout';
+import Check from '../checkout';
 
 
 
@@ -34,7 +32,6 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          {/* empieza headedddddddddddddddddddddddddddddddddddddddddddddddddddddddr */}
           <header id="header">
             <div class="header_top">
               <div class="container">
@@ -61,13 +58,16 @@ class App extends React.Component {
                 </div>
               </div>
             </div>
+
             <div class="header-middle">
               <div class="container">
                 <div class="row">
                   <div class="col-sm-4">
                     <div class="logo pull-left item">
                       <img className="logo" src={logo} />
+
                     </div>
+
                   </div>
                   <div class="col-sm-8">
                     <div class="shop-menu pull-right">
@@ -76,17 +76,26 @@ class App extends React.Component {
                         <li>
                           <hr />
                           <Switch class="row">
+
                             <Route path="/login" component={Login}>
+
                               <Login />
+                            </Route>
+
+                          </Switch>
+                        </li>
+                        <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
+                        <li>
+                          <hr />
+                          <Switch >
+                            <Route path="/cart" component={Cart} >
+                              <Cart />
                             </Route>
                           </Switch>
                         </li>
-                        <li><a href="/checkout"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
                         <li>
                           <hr />
-                        </li>
-                        <li>
-                          <hr />
+
                         </li>
                         <li><a href="/register" ><i class="fa fa-lock"></i> Registrarme</a></li>
                         <li>
@@ -104,9 +113,9 @@ class App extends React.Component {
               </div>
             </div>
 
-            <Header />
+            
           </header>
-          {/* terminadddddddddddddddddddddddddddddddddddddddddddddddddddddd header */}
+
           <Switch >
             <div id="sportswear" class="panel ">
               <Route path="/contacto" component={Booking}>
@@ -135,7 +144,6 @@ class App extends React.Component {
 
 
           {/*---------------------------------------Menus----------------------------------------------------------------------*/}
-
           <Route exact path='/PlaceOrder' component={PlaceOrder} />
           <Route exact path='/CartPrice' component={CartPrice} />
           <Route exact path='/ForgetPassword' component={FPass} />
