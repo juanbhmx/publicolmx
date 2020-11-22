@@ -25,7 +25,7 @@ export default function Login() {
             <input type="text" placeholder="Usuario" onChange={(e) => {
                 setUsuario(e.target.value);
             }} />
-            <input type="text" placeholder="Contraseña" onChange={(e) => {
+            <input type="password" placeholder="Contraseña" onChange={(e) => {
                 setContra(e.target.value);
             }} />
             <button onClick={Acceder}>Acceder</button>
