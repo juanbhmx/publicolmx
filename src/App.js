@@ -60,7 +60,7 @@ class App extends React.Component {
                   </div>
                 </div>
               </div>
-            </div>
+            </div>                                                                    
             <div class="header-middle">
               <div class="container">
                 <div class="row">
@@ -81,7 +81,10 @@ class App extends React.Component {
                             </Route>
                           </Switch>
                         </li>
-                        <li><a href="/checkout"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
+                        <li>                          
+                          <a href="/checkout">
+                          <span class="badge badge-pill badge-warning">$6,565</span>
+                          <i class="fa fa-shopping-cart"></i> Carrito</a></li>
                         <li>
                           <hr />
                         </li>

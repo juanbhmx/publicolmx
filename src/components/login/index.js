@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Axios from 'axios';
-import './style.scss';
+import './../../App.css';
+
+//import './style.scss';
 
 export default function Login() {
 
@@ -21,7 +23,7 @@ export default function Login() {
         });
     };
     return (
-        <div>
+        <div className="form">
             <input type="text" placeholder="Usuario" onChange={(e) => {
                 setUsuario(e.target.value);
             }} />

@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Congra from '../congratulation'
 import './stylecheck.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+
 import Axios from "axios";
 export default function Carrito() {
+
   const [prods, setprods] = useState("");
+
   useEffect(() => {
     Axios.get("https://api-colmena.herokuapp.com/Productos", {
     }).then((response) => {
@@ -29,12 +26,17 @@ export default function Carrito() {
             </span>
           </h4>
           {Object.values(prods).map(elemento => (
-            <p><a href="#">{elemento.Nombre}</a> <span class="price">${elemento.precio}</span></p>
+            <div>
+              <p>
+              <span class="badge badge-pill badge-warning">()</span>
+                <a href="#">{elemento.Nombre}</a> 
+                <span class="price">${elemento.precio}</span></p>
+            </div>
           )
           )}
-
           <hr />
-          <p>Total <span class="price" style={{ color: 'black' }}><b>$30</b></span></p>
+          <p>Total <span class="price" style={{ color: 'black' }}><b>$</b></span></p>
+
         </div>
       </div>
       <div class="col-75">
