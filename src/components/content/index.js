@@ -6,8 +6,19 @@ export default function Content() {
   const [data, setData] = useState("");
   const [valor, setValor] = useState("");
   const [prod, setprod] = useState("");
-  const [masven, setmasven]= useState("");
+  const [Id, setId] = useState("");
+  const [Cant, setcant] = useState("");
 
+  const addcart = () => {
+    Axios.post("https://api-colmena.herokuapp.com/addcart", {
+      Id: Id,
+      Cant: Cant
+    }).then((response) => {
+      if (response.data.message) {
+        alert(" " + response.data.message)
+      }
+    })
+  }
 
   useEffect(() => {
 
@@ -25,7 +36,6 @@ export default function Content() {
   console.log(data);
   console.log(valor);
   console.log(prod);
-  console.log(masven);
   return (
     <section>
       <div class="container">
@@ -72,19 +82,18 @@ export default function Content() {
                       <div class="productinfo text-center">
                         <img src="assets/images/home/product1.jpg" alt="" />
                         <h2>${elemento.precio}</h2>
-                          <p> {elemento.Nombre}</p>
+                        <p> {elemento.Nombre}</p>
                         <a href="#" values={elemento.Id} class="btn btn-default add-to-cart">
-                          <i class="fa fa-shopping-cart"></i>Añadir al carrito
+                          <button type="button" onChange={(e)=>{this.setId(e.target.value, elemento.Id)}} onClick={addcart}  class="btn btn-danger"><i class="fa fa-shopping-cart"></i>Añadir al Carrito</button>
                         </a>
                       </div>
                       <div class="product-overlay">
                         <div class="overlay-content">
-                        <img src="assets/images/home/product1.jpg" alt="" />
+                          <img src="assets/images/home/product1.jpg" alt="" />
                           <h2>${elemento.precio}</h2>
                           <p> {elemento.Nombre}</p>
-                          <a href="#" values={elemento.Id} class="btn btn-default add-to-cart">
-                            {/* se agarra el id ------ da click se warda en la base de datos y en checkout solo se recupera lo guardado en el carrito*/}
-                          <i class="fa fa-shopping-cart"></i>Añadir al carrito
+                          <a href="#"  class="btn btn-default add-to-cart">
+                            <button type="button"onChange={(e)=>{this.setId(e.target.value, elemento.Id)}} onClick={addcart} class="btn btn-danger"><i class="fa fa-shopping-cart"></i>Añadir al Carrito</button>
                           </a>
                         </div>
                       </div>
@@ -92,12 +101,11 @@ export default function Content() {
                     <div class="choose">
                       <ul class="nav nav-pills nav-justified">
                         <li>
-                        <span class="badge badge-warning">Cantidad</span>
+                          <span class="badge badge-warning">Cantidad</span>
                         </li>
                         <li>
-                         
-                            <input></input>
-
+                          <input type="number" values={elemento.Id} onChange={(e) => { setId(e.target.value); }} />
+                          <input type="number" onChange={(e) => { setcant(e.target.value); }} />
                         </li>
                       </ul>
                     </div>
@@ -122,7 +130,7 @@ export default function Content() {
 
             </div>
           </div>
-          
+
           {/* recomendados o mas vendidos */}
           <div class="recommended_items">
             <h2 class="title text-center">Productos Recomendados</h2>

@@ -3,6 +3,7 @@ import Congra from '../congratulation'
 import './stylecheck.css';
 
 import Axios from "axios";
+import Content from "../content";
 export default function Carrito() {
 
   const [prods, setprods] = useState("");
@@ -18,7 +19,7 @@ export default function Carrito() {
     }).then((response) => {
       setcart(response.data);
     });
-    
+
 
   }, []);
   console.log(total);
@@ -35,11 +36,13 @@ export default function Carrito() {
             </span>
           </h4>
           {Object.values(cart).map(elemento => (
-            <div>
+            <div class="content">
               <p>
-          <span class="badge badge-pill badge-warning">{elemento.cantidad}</span>
+                <span class="badge badge-pill badge-warning">{elemento.cantidad}</span>
                 <a href="#">{elemento.Nombre}</a>
-                <span class="price">${elemento.Totall}</span></p>
+                <span class="price">${elemento.Totall}</span>
+              </p>
+             
             </div>
           )
           )}
