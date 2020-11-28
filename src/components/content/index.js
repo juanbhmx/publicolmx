@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../login";
 import Axios from 'axios';
+import Cart from "../Cart";
 
 export default function Content() {
   const [data, setData] = useState("");
@@ -31,8 +32,8 @@ export default function Content() {
       setprod(response.data);
     });
 
-
   }, []);
+  
   console.log(data);
   console.log(valor);
   console.log(prod);
@@ -84,7 +85,7 @@ export default function Content() {
                         <h2>${elemento.precio}</h2>
                         <p> {elemento.Nombre}</p>
                         <a href="#" values={elemento.Id} class="btn btn-default add-to-cart">
-                          <button type="button" onChange={(e)=>{this.setId(e.target.value, elemento.Id)}} onClick={addcart}  class="btn btn-danger"><i class="fa fa-shopping-cart"></i>Añadir al Carrito</button>
+                          <button type="button" onChange={(e) => { this.setId(e.target.value, elemento.Id) }} onClick={addcart} class="btn btn-danger"><i class="fa fa-shopping-cart"></i>Añadir al Carrito</button>
                         </a>
                       </div>
                       <div class="product-overlay">
@@ -92,23 +93,32 @@ export default function Content() {
                           <img src="assets/images/home/product1.jpg" alt="" />
                           <h2>${elemento.precio}</h2>
                           <p> {elemento.Nombre}</p>
-                          <a href="#"  class="btn btn-default add-to-cart">
-                            <button type="button"onChange={(e)=>{this.setId(e.target.value, elemento.Id)}} onClick={addcart} class="btn btn-danger"><i class="fa fa-shopping-cart"></i>Añadir al Carrito</button>
+                          <a href="#" class="btn btn-default add-to-cart">
+                            <button onClick={addcart} class="btn btn-danger"><i class="fa fa-shopping-cart"></i>Añadir al Carrito frente</button>
                           </a>
                         </div>
                       </div>
                     </div>
+{/* ----------------------------parte 1 envio de datos------------------------------------ */}
                     <div class="choose">
                       <ul class="nav nav-pills nav-justified">
                         <li>
                           <span class="badge badge-warning">Cantidad</span>
                         </li>
                         <li>
-                          <input type="number" values={elemento.Id} onChange={(e) => { setId(e.target.value); }} />
-                          <input type="number" onChange={(e) => { setcant(e.target.value); }} />
+                          <input 
+                            type="number" 
+                            value={elemento.Id}
+                            onChange={(e) => { setId(e.target.value); }}  
+                          />
+                          <input 
+                            type="number" 
+                            onChange={(e) => { setcant(e.target.value); }}
+                          />
                         </li>
                       </ul>
                     </div>
+{/* ----------------------------parte 1 envio de datos------------------------------------ */}
                     <div class="choose">
                       <ul class="nav nav-pills nav-justified">
                         <li>
