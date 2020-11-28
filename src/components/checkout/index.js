@@ -6,14 +6,23 @@ import Axios from "axios";
 export default function Carrito() {
 
   const [prods, setprods] = useState("");
+  const [total, settotal] = useState("");
+  const [cart, setcart] = useState("");
 
   useEffect(() => {
-    Axios.get("https://api-colmena.herokuapp.com/Productos", {
+    Axios.get("https://api-colmena.herokuapp.com/Total", {
     }).then((response) => {
-      setprods(response.data);
+      settotal(response.data);
     });
+    Axios.get("https://api-colmena.herokuapp.com/Cart", {
+    }).then((response) => {
+      setcart(response.data);
+    });
+    
+
   }, []);
-  console.log(prods);
+  console.log(total);
+  console.log(cart);
   return (
 
     <div class="row">
@@ -25,18 +34,19 @@ export default function Carrito() {
               <b>Agregados:</b>
             </span>
           </h4>
-          {Object.values(prods).map(elemento => (
+          {Object.values(cart).map(elemento => (
             <div>
               <p>
-              <span class="badge badge-pill badge-warning">()</span>
-                <a href="#">{elemento.Nombre}</a> 
-                <span class="price">${elemento.precio}</span></p>
+          <span class="badge badge-pill badge-warning">{elemento.cantidad}</span>
+                <a href="#">{elemento.Nombre}</a>
+                <span class="price">${elemento.Totall}</span></p>
             </div>
           )
           )}
           <hr />
-          <p>Total <span class="price" style={{ color: 'black' }}><b>$</b></span></p>
-
+          {Object.values(total).map(elemento => (
+            <p>Total <span class="price" style={{ color: 'black' }}><b>$ {elemento.Total}</b></span></p>
+          ))}
         </div>
       </div>
       <div class="col-75">

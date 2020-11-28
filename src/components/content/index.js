@@ -19,10 +19,6 @@ export default function Content() {
     }).then((response) => {
       setprod(response.data);
     });
-    Axios.get("https://api-colmena.herokuapp.com/masvendidos", {
-    }).then((response) => {
-      setmasven(response.data);
-    });
 
 
   }, []);
