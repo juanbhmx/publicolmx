@@ -85,9 +85,14 @@ export default function Content() {
                         <img src="assets/images/home/product1.jpg" alt="" />
                         <h2>${elemento.precio}</h2>
                         <p> {elemento.Nombre}</p>
-                        {/* <a href="#" values={elemento.Id} class="btn btn-default add-to-cart">
-                            <button type="button" onClick={addcart} class="btn btn-danger"><i class="fa fa-shopping-cart"></i>Añadir al Carrito</button>
-                          </a> */}
+                         <a href="#" class="btn btn-default add-to-cart">
+                         <button
+                              onClick={() => addcart(elemento.Id)}
+                              class="btn btn-danger">
+                              <i class="fa fa-shopping-cart">
+                              </i>Añadir al Carrito
+                            </button>
+                          </a> 
                       </div>
                       <div class="product-overlay">
                         <div class="overlay-content">
