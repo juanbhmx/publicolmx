@@ -92,22 +92,22 @@ export default function Carrito() {
               <div class="col-50">
                 <h3>Direccion de envio</h3>
                 <label for="fname"><i class="fa fa-user"></i> Nombre</label>
-                <input type="text" id="fname" name="firstname" placeholder="Juan Bautista" onChange={(e)=>{setnombre(e.target.value);}} />
+                <input type="text" id="fname" name="firstname" placeholder="Juan Bautista" onChange={(e)=>{setnombre(e.target.value);}} required />
                 <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                <input type="text" id="email" name="email" placeholder="john@uthh.edu.mx" onChange={(e)=>{setemail(e.target.value);}}/>
+                <input type="text" id="email" name="email" placeholder="john@uthh.edu.mx" onChange={(e)=>{setemail(e.target.value);}}required/>
                 <label for="adr"><i class="fa fa-address-card-o"></i> Direccion</label>
-                <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" onChange={(e)=>{setdirec(e.target.value);}}/>
+                <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" onChange={(e)=>{setdirec(e.target.value);}}required/>
                 <label for="city"><i class="fa fa-institution"></i> Ciudad</label>
-                <input type="text" id="city" name="city" placeholder="Huejutla de Reyes" onChange={(e)=>{setciudad(e.target.value);}}/>
+                <input type="text" id="city" name="city" placeholder="Huejutla de Reyes" onChange={(e)=>{setciudad(e.target.value);}}required/>
 
                 <div class="row">
                   <div class="col-50">
                     <label for="state">Estado</label>
-                    <input type="text" id="state" name="state" placeholder="Hidalgo" onChange={(e)=>{setestado(e.target.value);}}/>
+                    <input type="text" id="state" name="state" placeholder="Hidalgo" onChange={(e)=>{setestado(e.target.value);}}required/>
                   </div>
                   <div class="col-50">
                     <label for="zip">CP</label>
-                    <input type="text" id="zip" name="zip" placeholder="43000" onChange={(e)=>{setcp(e.target.value);}}/>
+                    <input type="text" id="zip" name="zip" placeholder="43000" onChange={(e)=>{setcp(e.target.value);}}required/>
                   </div>
                 </div>
               </div>
@@ -122,20 +122,20 @@ export default function Carrito() {
                   <i class="fa fa-cc-discover" style={{ color: 'orange' }}></i>
                 </div>
                 <label for="cname">Nombre del beneficiario</label>
-                <input type="text" id="cname" name="cardname" placeholder="Juan Bautista Hernandez" onChange={(e)=>{setnombef(e.target.value);}}/>
+                <input type="text" id="cname" name="cardname" placeholder="Juan Bautista Hernandez" onChange={(e)=>{setnombef(e.target.value);}}required/>
                 <label for="ccnum">Numero de la Tarjeta</label>
-                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" onChange={(e)=>{setnumtar(e.target.value);}} />
+                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" onChange={(e)=>{setnumtar(e.target.value);}} required/>
                 <label for="expmonth">vence</label>
-                <input type="text" id="expmonth" name="expmonth" placeholder="Diciembre" onChange={(e)=>{setvence(e.target.value);}}/>
+                <input type="text" id="expmonth" name="expmonth" placeholder="Diciembre" onChange={(e)=>{setvence(e.target.value);}}required/>
 
                 <div class="row">
                   <div class="col-50">
                     <label for="expyear">Año</label>
-                    <input type="text" id="expyear" name="expyear" placeholder="2054" onChange={(e)=>{setaño(e.target.value);}} />
+                    <input type="text" id="expyear" name="expyear" placeholder="2054" onChange={(e)=>{setaño(e.target.value);}} required/>
                   </div>
                   <div class="col-50">
                     <label for="cvv">CVV</label>
-                    <input type="text" id="cvv" name="cvv" placeholder="352" onChange={(e)=>{setcvv(e.target.value);}}/>
+                    <input type="text" id="cvv" name="cvv" placeholder="352" onChange={(e)=>{setcvv(e.target.value);}}required/>
                   </div>
                 </div>
               </div>
