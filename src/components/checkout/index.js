@@ -10,6 +10,38 @@ export default function Carrito() {
   const [total, settotal] = useState("");
   const [cart, setcart] = useState("");
 
+  const[Nombre, setnombre]=useState("");
+  const[email, setemail]=useState("");
+  const[direccion, setdirec]=useState("");
+  const[ciudad, setciudad]=useState("");
+  const[estado, setestado]=useState("");
+  const[cp, setcp]=useState("");
+  const[nombef, setnombef]=useState("");
+  const[numtar, setnumtar]=useState("");
+  const[vence, setvence]=useState("");
+  const[año, setaño]=useState("");
+  const[ccv, setcvv]=useState("");
+
+  const Direccion =()=>{
+    Axios.post("https://api-colmena.herokuapp.com/Direccion",{
+      Nombre:Nombre,
+      email:email,
+      direccion:direccion,
+      ciudad:ciudad,
+      estado:estado,
+      cp:cp,
+      nombef:nombef,
+      numtar:numtar,
+      vence:vence,
+      año:año,
+      ccv:ccv,
+    }).then((response)=>{
+      if(response.data.message){
+        alert(" " + response.data.message)
+      }
+    });
+  }
+
   useEffect(() => {
     Axios.get("https://api-colmena.herokuapp.com/Total", {
     }).then((response) => {
@@ -42,7 +74,7 @@ export default function Carrito() {
                 <a href="#">{elemento.Nombre}</a>
                 <span class="price">${elemento.Totall}</span>
               </p>
-             
+
             </div>
           )
           )}
@@ -54,28 +86,28 @@ export default function Carrito() {
       </div>
       <div class="col-75">
         <div class="container">
-          <form action="/congratulation">
+          {/* <form action="/congratulation"> */}
 
             <div class="row">
               <div class="col-50">
                 <h3>Direccion de envio</h3>
                 <label for="fname"><i class="fa fa-user"></i> Nombre</label>
-                <input type="text" id="fname" name="firstname" placeholder="Juan Bautista" />
+                <input type="text" id="fname" name="firstname" placeholder="Juan Bautista" onChange={(e)=>{setnombre(e.target.value);}} />
                 <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                <input type="text" id="email" name="email" placeholder="john@uthh.edu.mx" />
+                <input type="text" id="email" name="email" placeholder="john@uthh.edu.mx" onChange={(e)=>{setemail(e.target.value);}}/>
                 <label for="adr"><i class="fa fa-address-card-o"></i> Direccion</label>
-                <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" />
+                <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" onChange={(e)=>{setdirec(e.target.value);}}/>
                 <label for="city"><i class="fa fa-institution"></i> Ciudad</label>
-                <input type="text" id="city" name="city" placeholder="Huejutla de Reyes" />
+                <input type="text" id="city" name="city" placeholder="Huejutla de Reyes" onChange={(e)=>{setciudad(e.target.value);}}/>
 
                 <div class="row">
                   <div class="col-50">
                     <label for="state">Estado</label>
-                    <input type="text" id="state" name="state" placeholder="Hidalgo" />
+                    <input type="text" id="state" name="state" placeholder="Hidalgo" onChange={(e)=>{setestado(e.target.value);}}/>
                   </div>
                   <div class="col-50">
                     <label for="zip">CP</label>
-                    <input type="text" id="zip" name="zip" placeholder="43000" />
+                    <input type="text" id="zip" name="zip" placeholder="43000" onChange={(e)=>{setcp(e.target.value);}}/>
                   </div>
                 </div>
               </div>
@@ -90,20 +122,20 @@ export default function Carrito() {
                   <i class="fa fa-cc-discover" style={{ color: 'orange' }}></i>
                 </div>
                 <label for="cname">Nombre del beneficiario</label>
-                <input type="text" id="cname" name="cardname" placeholder="Juan Bautista Hernandez" />
+                <input type="text" id="cname" name="cardname" placeholder="Juan Bautista Hernandez" onChange={(e)=>{setnombef(e.target.value);}}/>
                 <label for="ccnum">Numero de la Tarjeta</label>
-                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" />
+                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" onChange={(e)=>{setnumtar(e.target.value);}} />
                 <label for="expmonth">vence</label>
-                <input type="text" id="expmonth" name="expmonth" placeholder="Diciembre" />
+                <input type="text" id="expmonth" name="expmonth" placeholder="Diciembre" onChange={(e)=>{setvence(e.target.value);}}/>
 
                 <div class="row">
                   <div class="col-50">
                     <label for="expyear">Año</label>
-                    <input type="text" id="expyear" name="expyear" placeholder="2054" />
+                    <input type="text" id="expyear" name="expyear" placeholder="2054" onChange={(e)=>{setaño(e.target.value);}} />
                   </div>
                   <div class="col-50">
                     <label for="cvv">CVV</label>
-                    <input type="text" id="cvv" name="cvv" placeholder="352" />
+                    <input type="text" id="cvv" name="cvv" placeholder="352" onChange={(e)=>{setcvv(e.target.value);}}/>
                   </div>
                 </div>
               </div>
@@ -113,9 +145,9 @@ export default function Carrito() {
               <input type="checkbox" checked="checked" name="sameadr" />
 Dirección de envío igual a la de facturación
         </label>
-            <input type="submit" value="Continuar" class="btn" />
+            <input onClick={Direccion} value="Continuar" class="btn" />
 
-          </form>
+          {/* </form> */}
         </div>
       </div>
 
