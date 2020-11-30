@@ -30,12 +30,18 @@ import Axios from "axios";
 
 export default function App() {
   const [total, settotal] = useState("");
+  const [user, setuser] = useState("");
   useEffect(() => {
     Axios.get("https://api-colmena.herokuapp.com/Total", {
     }).then((response) => {
       settotal(response.data);
     });
+    Axios.get("https://api-colmena.herokuapp.com/User", {
+    }).then((response) => {
+      setuser(response.data);
+    });
   }, []);
+  console.log(user);
   console.log(total);
   return (
     <Router>
@@ -90,10 +96,15 @@ export default function App() {
                       <li>
                         <a href="/checkout">
                           {Object.values(total).map(elemento => (
-
                             <span class="badge badge-pill badge-warning">${elemento.Total}</span>
                           ))}
-                          <i class="fa fa-shopping-cart"></i> Carrito</a></li>
+                          <i class="fa fa-shopping-cart"></i> Carrito
+                        </a>
+                        <span>Hola: </span>
+                        {Object.values(user).map(elemento => (
+                          <span> {elemento.Usuario} - Bienvenido</span>
+                          ))}
+                      </li>
                       <li>
                         <hr />
                       </li>
