@@ -17,7 +17,7 @@ export default function Login() {
                 alert(" " + response.data.message);
 
             } else {
-                alert("Bienvenido");
+                alert("Bienvenidssso" + Usuario);
                 window.location.href = "https://lacolmx.netlify.app/";
             }
         });
