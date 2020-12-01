@@ -7,20 +7,8 @@ export default function Content() {
   const [data, setData] = useState("");
   const [valor, setValor] = useState("");
   const [prod, setprod] = useState("");
-  const [Id, setId] = useState("");
-  const [Cant, setcant] = useState("");
 
-  const addcart = (Id) => {
-    console.log(Id, Cant);
-    Axios.post("https://api-colmena.herokuapp.com/addcart", {
-      Id: Id,
-      Cant: Cant
-    }).then((response) => {
-      if (response.data.message) {
-        alert(" " + response.data.message)
-      }
-    })
-  }
+
 
   useEffect(() => {
 
@@ -85,9 +73,9 @@ export default function Content() {
                         <img src="assets/images/home/product1.jpg" alt="" />
                         <h2>${elemento.precio}</h2>
                         <p> {elemento.Nombre}</p>
-                         <a href="#" class="btn btn-default add-to-cart">
+                         <a href="/login" class="btn btn-default add-to-cart">
                          <button
-                              onClick={() => addcart(elemento.Id)}
+                            
                               class="btn btn-danger">
                               <i class="fa fa-shopping-cart">
                               </i>Añadir al Carrito
@@ -99,9 +87,9 @@ export default function Content() {
                           <img src="assets/images/home/product1.jpg" alt="" />
                           <h2>${elemento.precio}</h2>
                           <p> {elemento.Nombre}</p>
-                          <a href="#" class="btn btn-default add-to-cart">
+                          <a href="/login" class="btn btn-default add-to-cart">
                             <button
-                              onClick={() => addcart(elemento.Id)}
+                             
                               class="btn btn-danger">
                               <i class="fa fa-shopping-cart">
                               </i>Añadir al Carrito
@@ -117,15 +105,10 @@ export default function Content() {
                           <span class="badge badge-warning">Cantidad</span>
                         </li>
                         <li>
-                          <input
-                            value={elemento.Id}
-                            type="hidden"
-                            onChange={(e) => { setId(e.target.value); }}
-                          // onChange={(e) => { setId(e.target.value); }}
-                          />
+                          
                           <input
                             type="number"
-                            onChange={(e) => { setcant(e.target.value); }}
+                           
                           />
                         </li>
                       </ul>
