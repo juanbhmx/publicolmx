@@ -18,7 +18,7 @@ export default function Login() {
 
             } else {
                 alert("Bienvenido");
-                window.location.href = "/";
+                window.location.href = "https://lacolmx.netlify.app/";
             }
         });
     };
