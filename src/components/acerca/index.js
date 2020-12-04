@@ -14,8 +14,8 @@ return (
               <div class="productinfo text-center">
                 <img src="assets/images/home/prof3.jpg" alt="" />
                 <h2>Brandon Martinez H.</h2>
-                <p>Encargado de:</p>
-                
+                <p>Cargo: Administrador de proyectos</p>
+                <p>- Analista</p>                  
               </div>
               
           </div>
@@ -33,7 +33,9 @@ return (
             <div class="productinfo text-center">
               <img src="assets/images/home/prof1.jpg" alt="" />
               <h2>Juan Bautista H.</h2>
-              <p>Encargado de:</p>
+              <p>Cargo: Diseñador</p>
+              <p>- Tester</p>
+              <p>- Ingeniero de Validacion y V.</p>
              
             </div>
            
@@ -52,7 +54,9 @@ return (
             <div class="productinfo text-center">
               <img src="assets/images/home/prof2.jpg" alt="" />
               <h2>Victor Samuel L.</h2>
-              <p>Encargado de:</p>
+              <p>Cargo: Programador</p>
+              <p>- Documentador</p>
+              <p>- Ingeniero de manutencion</p>
               
             </div>
             
@@ -71,7 +75,7 @@ return (
             <div class="productinfo text-center">
               <img src="assets/images/home/prof4.jpg" alt="" />
               <h2>Bernardino Osorio C.</h2>
-              <p>Encargado de:</p>
+              <p>Cargo: Administrador de la configuracion</p>
               
             </div>
             
