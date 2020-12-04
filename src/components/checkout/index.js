@@ -104,6 +104,7 @@ export default function Carrito() {
                 {elemento.cantidad}
               </span>
               <a href="#">{elemento.Nombre}</a>
+<a>(${elemento.precio} Precio unitario)</a>
               <span class="price">${elemento.Totall}</span>
 
             </div>
